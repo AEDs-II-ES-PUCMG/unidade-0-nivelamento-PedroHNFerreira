@@ -13,7 +13,7 @@ public class ProdutoPerecivel extends Produto{
  public ProdutoPerecivel(String descricao, double precoCusto, double margemLucro, LocalDate validade){
     super (descricao, precoCusto, margemLucro);
     if (validade.isBefore(LocalDate.now())){
-        throw new IllegalArgumentException("o produto es´ta vencido!");
+        throw new IllegalArgumentException("o produto esta vencido!");
     }
     dataDeValidade = validade;
  }
@@ -25,7 +25,7 @@ public class ProdutoPerecivel extends Produto{
     if(diasValidade<=PRAZO_DESCONTO){
         desconto = DESCONTO;
     }
-    return (precoCusto * (1 = margemLucro))*(1-desconto);
+    return (precoCusto * (1 + margemLucro))*(1-desconto);
 
 }
  @Override
